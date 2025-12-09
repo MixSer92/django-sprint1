@@ -69,12 +69,8 @@ TEMPLATES = [
 ]
 
 
-
 WSGI_APPLICATION = 'blogicum.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -127,5 +123,3 @@ STATICFILES_DIRS = [BASE_DIR / 'static']  # Статика в django-sprint1/sta
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

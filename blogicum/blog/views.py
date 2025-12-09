@@ -1,13 +1,17 @@
 from django.shortcuts import render
 
+
 def index(request):
     return render(request, 'blog/index.html')
+
 
 def post_detail(request, id):
     return render(request, 'blog/detail.html')
 
+
 def category_posts(request, category_slug):
     return render(request, 'blog/index.html')
+
 
 posts = [
     {
@@ -52,16 +56,19 @@ posts = [
     },
 ]
 
+
 def index(request):
     # Перевернуть порядок постов для отображения от новых к старым
     reversed_posts = list(reversed(posts))
     context = {'posts': reversed_posts}
     return render(request, 'blog/index.html', context)
 
+
 def post_detail(request, id):
     post = posts[id] if id < len(posts) else None
     context = {'post': post}
     return render(request, 'blog/detail.html', context)
+
 
 def category_posts(request, category_slug):
     context = {'category_slug': category_slug}
