@@ -152,3 +152,6 @@ media/
 build_tests/
 yap_testing
 html/img/img/
+
+# Папка html с примерами разметки
+/html/
