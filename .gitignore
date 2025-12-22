@@ -151,4 +151,11 @@ media/
 # Testing
 build_tests/
 yap_testing
+<<<<<<< HEAD
 html/img/img/
+=======
+html/img/img/
+
+# Папка html с примерами разметки
+/html/
+>>>>>>> 49e2234f5f599499c87d14394a068baa1b43a6cd

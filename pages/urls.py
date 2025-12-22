@@ -1,8 +1,4 @@
 from django.urls import path
-<<<<<<< HEAD
-
-=======
->>>>>>> 49e2234f5f599499c87d14394a068baa1b43a6cd
 from . import views
 
 app_name = 'pages'

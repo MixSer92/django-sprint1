@@ -1,5 +1,9 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 
+=======
+from django.http import Http404
+>>>>>>> 49e2234f5f599499c87d14394a068baa1b43a6cd
 
 posts = [
     {
@@ -47,6 +51,7 @@ posts = [
 
 def index(request):
     """Главная страница"""
+<<<<<<< HEAD
     # Перевернуть порядок постов для отображения от новых к старым
     reversed_posts = list(reversed(posts))
     context = {'posts': reversed_posts}
@@ -63,3 +68,26 @@ def category_posts(request, category_slug):
     """Страница категорий"""
     context = {'category_slug': category_slug, 'posts': posts}
     return render(request, 'blog/category.html', context)
+=======
+    reversed_posts = list(reversed(posts))
+    return render(request, 'blog/index.html', {'posts': reversed_posts})
+
+
+def post_detail(request, id):
+    """Детальная страница поста по его ID."""
+    # Ищем пост по его ID
+    for post in posts:
+        if post['id'] == id:
+            return render(request, 'blog/detail.html', {'post': post})
+    # Если пост с таким ID не найден
+    raise Http404(f"Пост с ID {id} не найден")
+
+
+def category_posts(request, category_slug):
+    """Страница категории"""
+    return render(
+        request,
+        'blog/category.html',
+        {'category_slug': category_slug}
+    )
+>>>>>>> 49e2234f5f599499c87d14394a068baa1b43a6cd
