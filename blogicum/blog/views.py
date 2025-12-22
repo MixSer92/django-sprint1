@@ -46,20 +46,22 @@ posts = [
 
 
 def index(request):
-    """Главная страница"""
-    # Перевернуть порядок постов для отображения от новых к старым
+    template_name = 'blog/index.html'
     reversed_posts = list(reversed(posts))
     context = {'posts': reversed_posts}
-    return render(request, 'blog/index.html', context)
+    return render(request, template_name, context)
 
 
 def post_detail(request, id):
-    """Страница деталей"""
+    template_name = 'blog/detail.html'
     context = {'post': posts[id]}
-    return render(request, 'blog/detail.html', context)
+    return render(request, template_name, context)
 
 
 def category_posts(request, category_slug):
-    """Страница категорий"""
-    context = {'category_slug': category_slug, 'posts': posts}
-    return render(request, 'blog/category.html', context)
+    template_name = 'blog/category.html'
+    context = {
+        'posts': posts,
+        'category_slug': category_slug
+    }
+    return render(request, template_name, context)
