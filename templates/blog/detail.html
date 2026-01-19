@@ -1,28 +1,16 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block title %}{{ post.location }}. {{ post.date }}{% endblock %}
 
 {% block content %}
-<div class="container py-5">
   <article>
-    <ul class="list-unstyled">
-      <li>
-        <strong>Место:</strong> {{ post.location }}
-      </li>
-      <li>
-        <strong>Дата:</strong> {{ post.date }}
-      </li>
-      <li>
-        <strong>Категория:</strong> 
-      </li>
+    <ul>
+      <li>Место: {{ post.location }}</li>
+      <li>Дата: {{ post.date }}</li>
+      <li>Категория: {{ post.category }}</li>
     </ul>
-    <p class="lead">
-      {{ post.text|linebreaks }}
-    </p>
+    <p>{{ post.text|linebreaks }}</p>
     <a href="{% url 'blog:index' %}" class="btn btn-primary">
       ← Вернуться к ленте записей
     </a>
   </article>
-</div>
 {% endblock %}
