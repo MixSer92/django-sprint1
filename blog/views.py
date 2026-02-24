@@ -44,7 +44,7 @@ posts = [
     },
 ]
 
-POSTS_BY_ID = {post['id']: post for post in posts}
+posts_by_id = {post['id']: post for post in posts}
 
 
 def index(request):
@@ -57,9 +57,9 @@ def index(request):
 def post_detail(request, id):
     """Страница деталей"""
     template_name = 'blog/detail.html'
-    post = POSTS_BY_ID.get(id)
+    post = posts_by_id.get(id)
     if post is None:
-        raise Http404("""Запись не найдена""")
+        raise Http404("Запись не найдена")
     context = {'post': post}
     return render(request, template_name, context)
 
