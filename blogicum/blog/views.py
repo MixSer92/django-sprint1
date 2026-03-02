@@ -59,7 +59,7 @@ def post_detail(request, id):
     template_name = 'blog/detail.html'
     post = posts_by_id.get(id)
     if post is None:
-        raise Http404("Запись не найдена")
+        raise Http404('Запись не найдена')
     context = {'post': post}
     return render(request, template_name, context)
 

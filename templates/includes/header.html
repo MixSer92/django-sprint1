@@ -1,4 +1,5 @@
 {% load static %}
+{% with request.resolver_match.view_name as view_name %}
 <header>
   <nav class="navbar navbar-light" style="background-color: lightskyblue">
     <div class="container">
@@ -25,7 +26,8 @@
             Наши правила
           </a>
         </li>
-      </ul>      
+      </ul>
     </div>
   </nav> 
 </header>
+{% endwith %}
